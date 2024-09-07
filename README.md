@@ -4,20 +4,29 @@ Samubott é um bot do Telegram desenvolvido em Java, projetado para interagir co
 
 # Principais Funcionalidades:
 
-+Respostas com IA
++ Respostas com IA
 
-+Ferramentas Customizadas: Inclui ferramentas especializadas com possibilidade de extensão para outras funcionalidades.
++ Ferramentas Customizadas. (Pendente)
 
-+Manipulação de Comandos: Responde a comandos como /start e /help.
++ Manipulação de Comandos do Telegram: Responde a comandos como /start e /help.
 
-+Flexível e Modular: Projetado para ser escalável, com ênfase na facilidade de personalização e na adição de novos recursos.
++ Flexível e Modular.
 
 # Tecnologias Utilizadas:
 
-+Java: Linguagem principal para a lógica do bot.
++ Java: Linguagem principal para a lógica do bot.
 
-+API Telebof: Biblioteca moderna e fácil de usar para bots do Telegram em Java.
++ API Telebof: Biblioteca moderna e fácil de usar para bots do Telegram em Java.
 
-+Ollama: Para compreensão e interação em linguagem natural através de IA.
++ Ollama: Para compreensão e interação em linguagem natural através de IA.
 
-+Maven: Gerenciamento de dependências e construção do projeto.
++ Maven: Gerenciamento de dependências e construção do projeto.
+
+# Programas necessários para rodar o projeto
++ Ollama
+
+O Ollama pode ser instalado por [aqui](https://ollama.com/) , sendo essencial para a execução do projeto.
+
++ Gemma2:2b
+
+A versão 2b do Gemma2 pode ser instalado no Prompt de Comando após a instalação do Ollama com o comando "ollama run gemma2:2b".
