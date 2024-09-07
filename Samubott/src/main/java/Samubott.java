@@ -1,4 +1,9 @@
 //Imports
+import io.github.ollama4j.OllamaAPI;
+import io.github.ollama4j.exceptions.OllamaBaseException;
+import io.github.ollama4j.models.response.OllamaResult;
+import io.github.ollama4j.tools.Tools;
+import io.github.ollama4j.utils.OptionsBuilder;
 import et.telebof.BotClient;
 
 //Inicio da classe
