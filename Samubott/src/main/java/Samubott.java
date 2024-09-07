@@ -23,7 +23,28 @@ public class Samubott {
         bot.onMessage(filter -> filter.commands("help"), (context, message) -> {
             context.reply("Você selecionou o comando /help  \n O Samubott pode te auxiliar com perguntas, digite sua dúvida e uma resposta gerada por IA irá aparecer. :)").exec();
         });
-
+        // Resposta a pergunta do usuário com o Gemma
+        bot.onMessage(filter -> filter.text(), (context, message) -> {
+                    try {
+                        //Instancia o OllamaAPI
+                        OllamaAPI ollamaAPI = new OllamaAPI(GEMMA_API);
+                        //Solução para o timed out
+                        ollamaAPI.setRequestTimeoutSeconds(20);
+                        //Variável que armazena a mensagem do usuário
+                        String userInput = message.text;
+                        //Variável para armazenar a resposta do Gemma
+                        OllamaResult userResponse = ollamaAPI.generate("gemma2:2b", userInput, true, new OptionsBuilder().build());
+                        //Responde ao usuário
+                        context.reply(userResponse.getResponse()).exec();
+                        //Tratamentos de Erros
+                    } catch (OllamaBaseException e) {
+                        context.reply("Erro ao processar a mensagem com a API do Gemma.").exec();
+                    } catch (Exception e) {
+                        System.out.println("Erro ao processar a mensagem: " + e.getMessage());
+                        context.reply("Erro ao responder.").exec();
+                    }
+                }
+        );
         bot.run(); // Executa o bot0
     }
 }
