@@ -14,6 +14,8 @@ public class Samubott {
     public static void main(String[] args) {
         //Usa o TOKEN no metodo BotClient pra executar e colocar o bot on
         final BotClient bot = new BotClient(TOKEN);
+        //Endereço localhost para instaciar o gemma
+        final String GEMMA_API = "http://127.0.0.1:11434";
         // Resposta ao comando /start
         bot.onMessage(filter -> filter.commands("start"), (context, message) -> {
             context.reply("Salve, eu sou o Samubott, como posso te ajudar?").exec();
@@ -21,6 +23,7 @@ public class Samubott {
         bot.onMessage(filter -> filter.commands("help"), (context, message) -> {
             context.reply("Você selecionou o comando /help  \n O Samubott pode te auxiliar com perguntas, digite sua dúvida e uma resposta gerada por IA irá aparecer. :)").exec();
         });
+
         bot.run(); // Executa o bot0
     }
 }
